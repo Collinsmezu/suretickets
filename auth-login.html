@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SureTickets - Welcome Back</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============ CSS Variables & Reset ============ */
+    :root {
+      --primary: #fd910d;
+      --primary-dark: #e67e0b;
+      --secondary: #a30f1a;
+      --accent: #2c3e50;
+      --light: #f8f9fa;
+      --dark: #222;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --border-radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --gradient-primary: linear-gradient(135deg, #fd910d, #fa882b);
+      --gradient-dark: linear-gradient(135deg, #e67e0b, #d9730a);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============ Layout & Structure ============ */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+      flex-wrap: wrap;
+    }
+
+    /* ============ Hero Section ============ */
+    .hero-section {
+      flex: 1;
+      background: var(--gradient-primary);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      position: relative;
+      overflow: hidden;
+      min-width: min(100%, 400px);
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* ============ Form Section ============ */
+    .form-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      min-width: min(100%, 400px);
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 420px;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .welcome-back {
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* ============ Form Elements ============ */
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .input-group i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary);
+      z-index: 2;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .input-group:focus-within i {
+      color: var(--primary-dark);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: 2px solid var(--light-gray);
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: var(--transition);
+      background: white;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(253, 145, 13, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: #999;
+    }
+
+    /* ============ Remember Me & Forgot Password ============ */
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .remember-checkbox {
+      accent-color: var(--primary);
+    }
+
+    .forgot-password {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* ============ Buttons ============ */
+    .login-btn {
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.5px;
+      width: 100%;
+    }
+
+    .login-btn:hover {
+      background: var(--gradient-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+    }
+
+    .login-btn.loading {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+
+    /* ============ Divider ============ */
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light-gray);
+    }
+
+    .divider span {
+      padding: 0 1rem;
+    }
+
+    /* ============ Social Login ============ */
+    .social-login {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.875rem;
+      border: 2px solid var(--light-gray);
+      border-radius: var(--border-radius);
+      background: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      border-color: var(--primary);
+      background: var(--light);
+      transform: translateY(-1px);
+    }
+
+    .social-btn.google i {
+      color: #db4437;
+    }
+
+    .social-btn.apple i {
+      color: #000;
+    }
+
+    /* ============ Signup Link ============ */
+    .signup-link {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--gray);
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .signup-link a {
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* ============ Demo Notice ============ */
+    .demo-notice {
+      background: rgba(253, 145, 13, 0.1);
+      border: 1px solid rgba(253, 145, 13, 0.2);
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    .demo-notice strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* ============ Responsive Design ============ */
+    @media (max-width: 900px) {
+      .app-container {
+        flex-direction: column;
+      }
+
+      .hero-section,
+      .form-section {
+        min-height: auto;
+        padding: 3rem 2rem;
+      }
+
+      .hero-section {
+        padding-top: 4rem;
+      }
+
+      .logo {
+        font-size: 2.2rem;
+      }
+
+      .social-login {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section,
+      .form-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .form-title {
+        font-size: 1.75rem;
+      }
+
+      .form-input {
+        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+      }
+
+      .form-options {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+    }
+
+    /* ============ Focus States for Accessibility ============ */
+    .form-input:focus-visible,
+    .login-btn:focus-visible,
+    .social-btn:focus-visible,
+    .forgot-password:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* ============ Animation for Error State ============ */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .error-shake {
+      animation: shake 0.3s ease-in-out;
+    }
+
+    .error-border {
+      border-color: #ff3860 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Welcome to SureTickets">
+      <div class="hero-content">
+        <h1 class="logo">SureTickets</h1>
+        <p class="tagline">Welcome back to your event management dashboard</p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Events Managed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2M+</div>
+            <div class="stat-label">Tickets Sold</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">99.8%</div>
+            <div class="stat-label">Uptime</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" aria-label="Login to your account">
+      <div class="form-container">
+        <div class="form-header">
+          <div class="welcome-back">Welcome Back</div>
+          <h2 class="form-title">Sign in to Your Account</h2>
+          <p class="form-subtitle">Enter your credentials to access your dashboard</p>
+        </div>
+
+        <form class="form" id="loginForm">
+          <div class="input-group">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <input type="text" class="form-input" id="username" placeholder="Email or Username" required>
+          </div>
+
+          <div class="input-group">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            <input type="password" class="form-input" id="password" placeholder="Password" required>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" class="remember-checkbox" id="rememberMe">
+              Remember me
+            </label>
+            <a href="#" class="forgot-password" id="forgotPassword">
+              Forgot password?
+            </a>
+          </div>
+
+          <button type="submit" class="login-btn" id="loginButton">
+            Sign In
+          </button>
+
+          <div class="divider">
+            <span>or continue with</span>
+          </div>
+
+          <div class="social-login">
+            <button type="button" class="social-btn google" aria-label="Sign in with Google">
+              <i class="fab fa-google" aria-hidden="true"></i>
+              Google
+            </button>
+            <button type="button" class="social-btn apple" aria-label="Sign in with Apple">
+              <i class="fab fa-apple" aria-hidden="true"></i>
+              Apple
+            </button>
+          </div>
+
+          <div class="demo-notice">
+            <strong>Demo Account:</strong> Try email: demo@suretickets.com / password: demo123
+          </div>
+
+          <div class="signup-link">
+            Don't have an account? <a href="#" id="signupLink">Create an account</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div id="forgotPasswordModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 2rem; border-radius: var(--border-radius); max-width: 400px; width: 90%;">
+      <h3 style="margin-bottom: 1rem; color: var(--accent);">Reset Your Password</h3>
+      <p style="margin-bottom: 1.5rem; color: var(--gray);">Enter your email address and we'll send you a link to reset your password.</p>
+      <input type="email" id="resetEmail" placeholder="Enter your email" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 2px solid var(--light-gray); border-radius: 8px;">
+      <div style="display: flex; gap: 1rem;">
+        <button onclick="closeModal()" style="flex: 1; padding: 0.75rem; background: var(--light-gray); border: none; border-radius: 8px; cursor: pointer;">Cancel</button>
+        <button onclick="sendResetLink()" style="flex: 1; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer;">Send Link</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // DOM Elements
+    const loginForm = document.getElementById('loginForm');
+    const loginButton = document.getElementById('loginButton');
+    const forgotPasswordLink = document.getElementById('forgotPassword');
+    const signupLink = document.getElementById('signupLink');
+    const modal = document.getElementById('forgotPasswordModal');
+
+    // Demo credentials
+    const demoEmail = 'demo@suretickets.com';
+    const demoPassword = 'demo123';
+
+    // Form submission handler
+    loginForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const rememberMe = document.getElementById('rememberMe').checked;
+      
+      // Add loading state
+      loginButton.classList.add('loading');
+      loginButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+      
+      // Simulate API call with delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Check credentials
+      if (username === demoEmail && password === demoPassword) {
+        // Successful login
+        showSuccessMessage();
+        
+        // Save to localStorage if "Remember me" is checked
+        if (rememberMe) {
+          localStorage.setItem('rememberedUser', username);
+        } else {
+          localStorage.removeItem('rememberedUser');
+        }
+        
+        // Redirect to dashboard (simulated)
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1000);
+      } else {
+        // Failed login
+        showErrorMessage();
+      }
+      
+      // Reset button state
+      loginButton.classList.remove('loading');
+      loginButton.textContent = 'Sign In';
+    });
+
+    // Check for remembered user
+    window.addEventListener('DOMContentLoaded', () => {
+      const rememberedUser = localStorage.getItem('rememberedUser');
+      if (rememberedUser) {
+        document.getElementById('username').value = rememberedUser;
+        document.getElementById('rememberMe').checked = true;
+      }
+    });
+
+    // Forgot password modal
+    forgotPasswordLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    });
+
+    function closeModal() {
+      modal.style.display = 'none';
+      document.getElementById('resetEmail').value = '';
+    }
+
+    function sendResetLink() {
+      const email = document.getElementById('resetEmail').value;
+      if (email && email.includes('@')) {
+        alert(`Reset link sent to ${email}. Check your inbox!`);
+        closeModal();
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+    // Signup link - redirect to signup page
+    signupLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'signup.html';
+    });
+
+    // Social login buttons
+    document.querySelector('.social-btn.google').addEventListener('click', () => {
+      alert('Google authentication would be implemented here.');
+    });
+
+    document.querySelector('.social-btn.apple').addEventListener('click', () => {
+      alert('Apple authentication would be implemented here.');
+    });
+
+    // Helper functions
+    function showSuccessMessage() {
+      const button = loginButton;
+      const originalText = button.textContent;
+      const originalBg = button.style.background;
+      
+      button.textContent = '✓ Success! Redirecting...';
+      button.style.background = '#10b981';
+      button.disabled = true;
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = originalBg;
+        button.disabled = false;
+      }, 1000);
+    }
+
+    function showErrorMessage() {
+      const inputs = document.querySelectorAll('.form-input');
+      const button = loginButton;
+      
+      // Add shake animation
+      inputs.forEach(input => {
+        input.classList.add('error-shake', 'error-border');
+        setTimeout(() => {
+          input.classList.remove('error-shake');
+        }, 300);
+      });
+      
+      // Show error message
+      const errorMsg = document.createElement('div');
+      errorMsg.textContent = 'Invalid credentials. Please try again.';
+      errorMsg.style.cssText = 'color: #ff3860; font-size: 0.9rem; margin-top: 0.5rem; text-align: center;';
+      
+      // Remove any existing error message
+      const existingError = loginForm.querySelector('.error-message');
+      if (existingError) existingError.remove();
+      
+      errorMsg.className = 'error-message';
+      loginForm.insertBefore(errorMsg, loginButton.nextSibling);
+      
+      // Remove error styling after 3 seconds
+      setTimeout(() => {
+        inputs.forEach(input => input.classList.remove('error-border'));
+        errorMsg.remove();
+      }, 3000);
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
