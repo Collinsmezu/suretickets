@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Check in</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ic" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="assets/vendor/css/organcss.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="assets/css/organiser-dash.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="assets/vendor/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+
+    <!-- QR Code Scanner CSS -->
+    <style>
+        #qr-reader {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .qr-camera-box {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+        }
+
+        #scannerBox {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        #scannerBox i {
+            font-size: 48px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        #scannerBox p {
+            color: #666;
+            margin: 0;
+        }
+
+        .scan-active {
+            border-color: #4361ee;
+            background: #f0f4ff;
+        }
+
+        .scan-active i {
+            color: #4361ee;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="index.html" class="app-brand-link">
+                        <span class="app-brand-logo demo"></span>
+                        <h2 style="margin-top: 10px;">SureTickets</h2>
+                    </a>
+
+                    <a href="javascript:void(0);"
+                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+
+                <div class="menu-inner-shadow"></div>
+
+                <ul class="menu-inner py-1">
+
+                    <!-- MAIN MENU -->
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Main Menu</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div>Dashboard</div>
+                        </a>
+                    </li>
+
+                    <!-- EVENTS -->
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-calendar-event"></i>
+                            <div>Events</div>
+                        </a>
+                        <ul class="menu-sub ">
+                            <li class="menu-item ">
+                                <a href="my-event.html" class="menu-link">
+                                    <i class="bx bx-calendar me-2"></i>
+                                    <div>My Events</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="add-event.html" class="menu-link">
+                                    <i class="bx bx-plus-circle me-2"></i>
+                                    <div>Add New Event</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- TICKET SALES -->
+                    <li class="menu-item ">
+                        <a href="ticket-sales.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+                            <div>Ticket Sales</div>
+                        </a>
+                    </li>
+
+                    <!-- CHECK IN -->
+                    <li class="menu-item active">
+                        <a href="check-in.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-check-shield"></i>
+                            <div>Check-in</div>
+                        </a>
+                    </li>
+
+                    <!-- INVITATIONS -->
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-envelope-open"></i>
+                            <div>Invitations</div>
+                        </a>
+                         <ul class="menu-sub">
+                            <li class="menu-item ">
+                                <a href="send-invite.html" class="menu-link">
+                                    <i class="bx bx-send me-2"></i>
+                                    <div>Send Invite</div>
+                                </a>
+                            </li>
+
+                            <li class="menu-item active">
+                                <a href="message-history.html" class="menu-link">
+                                    <i class="bx bx-history me-2"></i>
+                                    <div>History</div>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+                    <!-- VOTING -->
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Voting</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-trophy"></i>
+                            <div>Voting</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="contests.html" class="menu-link">
+                                    <i class="bx bx-award me-2"></i>
+                                    <div>Contests</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="create-contest.html" class="menu-link">
+                                    <i class="bx bx-plus-circle me-2"></i>
+                                    <div>Create Contests</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="voting-results.html" class="menu-link">
+                                    <i class="bx bx-bar-chart-alt-2 me-2"></i>
+                                    <div>Results</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="voting-orders.html" class="menu-link">
+                                    <i class="bx bx-cart me-2"></i>
+                                    <div>Orders</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- COMMUNICATION -->
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Communication</span>
+                    </li>
+
+                    <!-- EMAIL -->
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-mail-send"></i>
+                            <div>Email</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <i class="bx bx-envelope me-2"></i>
+                                    <div>Send Email</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <i class="bx bx-package me-2"></i>
+                                    <div>Packages</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- MESSAGES -->
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-message-rounded-dots"></i>
+                            <div>Messages</div>
+                        </a>
+                    </li>
+
+                    <!-- TRANSACTIONS -->
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-transfer-alt"></i>
+                            <div>Transactions</div>
+                        </a>
+                    </li>
+
+                    <!-- REVENUE -->
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-wallet"></i>
+                            <div>Revenue</div>
+                        </a>
+                    </li>
+
+                    <!-- SUPPORT -->
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-support"></i>
+                            <div>Support</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </aside>
+
+            <!-- / Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- Place this tag where you want the button to render. -->
+                            <li class="nav-item lh-1 me-3">
+                                <a href="add-event.html">
+                                    <button type="button" class="btn btn-primary d-block" data-bs-toggle="button"
+                                        autocomplete="off">
+
+                                        Add New Event
+                                    </button>
+                                </a>
+                            </li>
+
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="assets/img/avatars/1.png" alt
+                                                            class="w-px-40 h-auto rounded-circle" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-semibold d-block">John Doe</span>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="profile.html">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bx bx-cog me-2"></i>
+                                            <span class="align-middle">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                                                <span class="flex-grow-1 align-middle">Billing</span>
+                                                <span
+                                                    class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <!-- SELECT EVENT -->
+
+
+                <div class="content-wrapper">
+                    <!-- Content -->
+                    <div class="container-xxl flex-grow-1 container-p-y">
+
+                        <!-- PAGE HEADER -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h4 class="fw-bold mb-1">Event Check-In</h4>
+                                <p class="text-muted mb-0">Verify tickets and manage attendee entry</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row align-items-end g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Select Event</label>
+                                        <select class="form-select form-select-lg" id="eventSelect">
+                                            <option value="" selected disabled>-- Choose an event --</option>
+                                            <option value="1">Tech Innovators Conference 2025</option>
+                                            <option value="2">Startup Pitch Night</option>
+                                            <option value="3">Campus Fellowship Summit</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-semibold">Event Details</label>
+                                        <div class="border rounded p-3 bg-light">
+                                            <div class="fw-semibold" id="eventName">No event selected</div>
+                                            <small class="text-muted" id="eventMeta">—</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 d-grid">
+                                        <button class="btn btn-primary btn-lg" id="loadEventBtn" disabled>
+                                            Load Event
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STATS -->
+                        <div class="row mb-4">
+                            <div class="col-lg-3 col-md-6 col-6 mb-3">
+                                <div class="card stat-card">
+                                    <div class="card-body">
+                                        <i class="bx bx-calendar-check stat-icon"></i>
+                                        <span>Total Attendees</span>
+                                        <h3>120</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-6 mb-3">
+                                <div class="card stat-card">
+                                    <div class="card-body">
+                                        <i class="bx bx-check-circle stat-icon"></i>
+                                        <span>Checked In</span>
+                                        <h3>45</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-6 mb-3">
+                                <div class="card stat-card">
+                                    <div class="card-body">
+                                        <i class="bx bx-time-five stat-icon"></i>
+                                        <span>Pending</span>
+                                        <h3>75</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-6 mb-3">
+                                <div class="card stat-card">
+                                    <div class="card-body">
+                                        <i class="bx bx-x-circle stat-icon"></i>
+                                        <span>Invalid</span>
+                                        <h3>2</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- QR SCAN MODAL (FIXED) -->
+                        <div class="modal fade" id="qrScanModal" tabindex="-1" aria-labelledby="qrScanModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-md">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="qrScanModalLabel">Scan QR Code</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <!-- CAMERA PREVIEW -->
+                                        <div id="qr-reader" class="qr-camera-box">
+                                            <div class="text-muted my-5">
+                                                <i class="bx bx-camera bx-lg mb-3"></i>
+                                                <p>Initializing camera...</p>
+                                            </div>
+                                        </div>
+                                        <p class="mt-3 mb-0 text-muted">
+                                            Position the QR code within the frame
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                        <button type="button" id="toggleCamera" class="btn btn-outline-primary">
+                                            <i class="bx bx-refresh"></i> Switch Camera
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CHECK-IN CARD -->
+                        <div class="card mb-4">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="section-icon">
+                                        <i class="bx bx-qr-scan"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Ticket Check-In</h5>
+                                        <small class="text-muted">Scan QR code or enter ticket manually</small>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#qrScanModal">
+                                    <i class="bx bx-camera me-1"></i> Scan QR
+                                </button>
+                            </div>
+
+                            <div class="card-body">
+                                <!-- MANUAL ENTRY -->
+                                <div class="row g-3 align-items-end">
+                                    <div class="col-md-8">
+                                        <label class="form-label">Ticket Code</label>
+                                        <input type="text" class="form-control form-control-lg"
+                                            placeholder="Enter ticket code" id="ticketInput">
+                                    </div>
+
+                                    <div class="col-md-4 d-grid">
+                                        <button class="btn btn-primary btn-lg" id="checkInBtn">
+                                            <i class="bx bx-check-circle me-1"></i> Check In
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- STATUS MESSAGE -->
+                                <div id="checkInStatus" class="alert alert-success mt-4 d-none">
+                                    <strong>Check-In Successful</strong>
+                                    <div class="small">VIP Ticket — John Doe</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- RECENT CHECK-INS -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Recent Check-Ins</h5>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Ticket Type</th>
+                                            <th>Code</th>
+                                            <th>Status</th>
+                                            <th>Date & Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>John Doe</td>
+                                            <td>VIP</td>
+                                            <td>#TKP-9082</td>
+                                            <td><span class="badge bg-primary">Checked In</span></td>
+                                            <td>Today, 10:42 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mary Okafor</td>
+                                            <td>Regular</td>
+                                            <td>#TKP-1029</td>
+                                            <td><span class="badge bg-primary">Checked In</span></td>
+                                            <td>Today, 10:38 AM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- / Content -->
+
+                        <!-- Footer -->
+                        <footer class="content-footer footer bg-footer-theme">
+                            <!-- ... footer content ... -->
+                        </footer>
+                        <!-- / Footer -->
+
+                        <div class="content-backdrop fade"></div>
+                    </div>
+                    <!-- Content wrapper -->
+                </div>
+                <!-- / Layout page -->
+            </div>
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
+        </div>
+        <!-- / Layout wrapper -->
+
+        <div class="buy-now">
+            <a href="#" target="_blank" class="btn btn-danger btn-buy-now">Contact us</a>
+        </div>
+
+        <!-- Core JS -->
+        <script src="assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="assets/vendor/libs/popper/popper.js"></script>
+        <script src="assets/vendor/js/bootstrap.js"></script>
+        <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="assets/vendor/js/menu.js"></script>
+
+        <!-- Vendors JS -->
+        <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+        <!-- QR Code Scanner Library -->
+        <script src="https://unpkg.com/html5-qrcode@2.3.4/html5-qrcode.min.js"></script>
+
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
+
+        <!-- Page JS -->
+        <script src="assets/js/dashboards-analytics.js"></script>
+
+        <!-- QR Scanner Script -->
+        <script>
+            // Variables for QR scanner
+            let html5QrCode = null;
+            let isScannerRunning = false;
+            let currentCameraId = null;
+
+            // Get DOM elements
+            const qrScanModal = document.getElementById('qrScanModal');
+            const ticketInput = document.getElementById('ticketInput');
+            const checkInBtn = document.getElementById('checkInBtn');
+            const checkInStatus = document.getElementById('checkInStatus');
+            const toggleCameraBtn = document.getElementById('toggleCamera');
+
+            // Event listener for manual check-in
+            checkInBtn.addEventListener('click', () => {
+                const ticketCode = ticketInput.value.trim();
+
+                if (!ticketCode) {
+                    alert('Please enter a ticket code');
+                    return;
+                }
+
+                // Simulate check-in process
+                checkInStatus.innerHTML = `
+                <strong>Check-In Successful!</strong>
+                <div class="small">Ticket Code: ${ticketCode}</div>
+                <div class="small mt-1">Checked in at ${new Date().toLocaleTimeString()}</div>
+            `;
+                checkInStatus.className = 'alert alert-success mt-4';
+                checkInStatus.classList.remove('d-none');
+
+                // Clear input after successful check-in
+                ticketInput.value = '';
+
+                // Auto-hide success message after 5 seconds
+                setTimeout(() => {
+                    checkInStatus.classList.add('d-none');
+                }, 5000);
+            });
+
+            // Function to stop QR scanner
+            function stopQrScanner() {
+                if (html5QrCode && isScannerRunning) {
+                    html5QrCode.stop()
+                        .then(() => {
+                            isScannerRunning = false;
+                            currentCameraId = null;
+                            console.log('QR Scanner stopped successfully');
+                        })
+                        .catch(err => {
+                            console.log('Error stopping QR scanner:', err);
+                        });
+                }
+            }
+
+            // Function to start QR scanner with specified camera
+            function startQrScanner(cameraId = null) {
+                const qrReaderElement = document.getElementById('qr-reader');
+
+                // Clear previous content
+                qrReaderElement.innerHTML = '';
+
+                // Create new scanner instance
+                html5QrCode = new Html5Qrcode("qr-reader");
+
+                const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+                    console.log(`QR Code detected: ${decodedText}`);
+
+                    // Fill the ticket input with scanned code
+                    ticketInput.value = decodedText;
+
+                    // Stop the scanner
+                    stopQrScanner();
+
+                    // Hide the modal
+                    const modal = bootstrap.Modal.getInstance(qrScanModal);
+                    modal.hide();
+
+                    // Show success message
+                    checkInStatus.innerHTML = `
+                    <strong>QR Code Scanned Successfully!</strong>
+                    <div class="small">Ticket Code: ${decodedText}</div>
+                `;
+                    checkInStatus.className = 'alert alert-success mt-4';
+                    checkInStatus.classList.remove('d-none');
+
+                    // Auto-hide message after 5 seconds
+                    setTimeout(() => {
+                        checkInStatus.classList.add('d-none');
+                    }, 5000);
+                };
+
+                const config = {
+                    fps: 10,
+                    qrbox: {
+                        width: 250,
+                        height: 250
+                    }
+                };
+
+                // Get available cameras
+                Html5Qrcode.getCameras()
+                    .then(cameras => {
+                        if (cameras && cameras.length > 0) {
+                            let cameraToUse;
+
+                            if (cameraId) {
+                                cameraToUse = cameraId;
+                            } else {
+                                // Prefer back camera (environment) if available
+                                const backCamera = cameras.find(cam =>
+                                    cam.label.toLowerCase().includes('back') ||
+                                    cam.label.toLowerCase().includes('environment')
+                                );
+                                cameraToUse = backCamera ? backCamera.id : cameras[0].id;
+                            }
+
+                            currentCameraId = cameraToUse;
+
+                            return html5QrCode.start(
+                                cameraToUse,
+                                config,
+                                qrCodeSuccessCallback,
+                                errorMessage => {
+                                    // Ignore scanning errors (they happen during normal operation)
+                                }
+                            );
+                        } else {
+                            qrReaderElement.innerHTML = `
+                            <div class="text-danger my-5">
+                                <i class="bx bx-error bx-lg mb-3"></i>
+                                <p>No camera found. Please check your device permissions.</p>
+                            </div>
+                        `;
+                            throw new Error('No cameras found');
+                        }
+                    })
+                    .then(() => {
+                        isScannerRunning = true;
+                        console.log('QR Scanner started successfully');
+                    })
+                    .catch(err => {
+                        console.log('Error starting QR scanner:', err);
+                        qrReaderElement.innerHTML = `
+                        <div class="text-danger my-5">
+                            <i class="bx bx-error bx-lg mb-3"></i>
+                            <p>Camera error: ${err.message}</p>
+                            <button class="btn btn-primary btn-sm mt-2" onclick="startQrScanner()">
+                                <i class="bx bx-refresh"></i> Try Again
+                            </button>
+                        </div>
+                    `;
+                    });
+            }
+
+            // Event listener for modal show
+            qrScanModal.addEventListener('show.bs.modal', function () {
+                // Start scanner when modal opens
+                setTimeout(() => {
+                    startQrScanner();
+                }, 300);
+            });
+
+            // Event listener for modal hide
+            qrScanModal.addEventListener('hide.bs.modal', function () {
+                // Stop scanner when modal closes
+                stopQrScanner();
+            });
+
+            // Toggle camera button
+            if (toggleCameraBtn) {
+                toggleCameraBtn.addEventListener('click', function () {
+                    if (isScannerRunning) {
+                        stopQrScanner();
+                        setTimeout(() => {
+                            // Get all cameras and switch to next one
+                            Html5Qrcode.getCameras()
+                                .then(cameras => {
+                                    if (cameras && cameras.length > 1) {
+                                        let currentIndex = cameras.findIndex(cam => cam.id === currentCameraId);
+                                        let nextIndex = (currentIndex + 1) % cameras.length;
+                                        startQrScanner(cameras[nextIndex].id);
+                                    }
+                                })
+                                .catch(err => {
+                                    console.log('Error switching camera:', err);
+                                });
+                        }, 500);
+                    }
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                stopQrScanner();
+            });
+
+            // Also allow Enter key to trigger check-in
+            ticketInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    checkInBtn.click();
+                }
+            });
+
+
+
+            const eventSelect = document.getElementById('eventSelect');
+            const loadEventBtn = document.getElementById('loadEventBtn');
+            const eventName = document.getElementById('eventName');
+            const eventMeta = document.getElementById('eventMeta');
+
+            const events = {
+                1: { name: "Tech Innovators Conference 2025", meta: "May 20 • Main Auditorium" },
+                2: { name: "Startup Pitch Night", meta: "June 2 • Innovation Hub" },
+                3: { name: "Campus Fellowship Summit", meta: "July 10 • Convocation Arena" }
+            };
+
+            eventSelect.addEventListener('change', function () {
+                const selected = events[this.value];
+                eventName.textContent = selected.name;
+                eventMeta.textContent = selected.meta;
+                loadEventBtn.disabled = false;
+            });
+
+
+        </script>
+
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
