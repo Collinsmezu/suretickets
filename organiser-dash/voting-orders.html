@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>My event </title>
+    <title>Voting Orders</title>
 
     <meta name="description" content="" />
 
@@ -31,8 +31,8 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
     <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
+
     <!-- Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
@@ -40,8 +40,10 @@
 
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
-
     <script src="assets/js/config.js"></script>
+
+    <!-- QR Code Scanner CSS -->
+
 </head>
 
 <body>
@@ -49,7 +51,6 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="index.html" class="app-brand-link">
@@ -80,13 +81,13 @@
                     </li>
 
                     <!-- EVENTS -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-calendar-event"></i>
                             <div>Events</div>
                         </a>
                         <ul class="menu-sub ">
-                            <li class="menu-item active">
+                            <li class="menu-item ">
                                 <a href="my-event.html" class="menu-link">
                                     <i class="bx bx-calendar me-2"></i>
                                     <div>My Events</div>
@@ -102,7 +103,7 @@
                     </li>
 
                     <!-- TICKET SALES -->
-                    <li class="menu-item">
+                    <li class="menu-item ">
                         <a href="ticket-sales.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
                             <div>Ticket Sales</div>
@@ -118,26 +119,26 @@
                     </li>
 
                     <!-- INVITATIONS -->
-                    <li class="menu-item">
+                    <li class="menu-item ">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-envelope-open"></i>
                             <div>Invitations</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item ">
                                 <a href="send-invite.html" class="menu-link">
                                     <i class="bx bx-send me-2"></i>
                                     <div>Send Invite</div>
                                 </a>
                             </li>
-                            
-                            <li class="menu-item">
+
+                            <li class="menu-item ">
                                 <a href="message-history.html" class="menu-link">
                                     <i class="bx bx-history me-2"></i>
                                     <div>History</div>
                                 </a>
                             </li>
-                            
+
                         </ul>
                     </li>
 
@@ -146,31 +147,31 @@
                         <span class="menu-header-text">Voting</span>
                     </li>
 
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-trophy"></i>
                             <div>Voting</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item ">
                                 <a href="contests.html" class="menu-link">
                                     <i class="bx bx-award me-2"></i>
                                     <div>Contests</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item ">
                                 <a href="create-contest.html" class="menu-link">
                                     <i class="bx bx-plus-circle me-2"></i>
                                     <div>Create Contests</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item ">
                                 <a href="voting-results.html" class="menu-link">
                                     <i class="bx bx-bar-chart-alt-2 me-2"></i>
                                     <div>Results</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="voting-orders.html" class="menu-link">
                                     <i class="bx bx-cart me-2"></i>
                                     <div>Orders</div>
@@ -245,8 +246,6 @@
 
             <!-- Layout container -->
             <div class="layout-page">
-                <!-- Navbar -->
-
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -261,11 +260,13 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <li class="nav-item lh-1 me-3">
-                                <button href="add-event.html" type="button" class="btn btn-primary d-block"
-                                    data-bs-toggle="button" autocomplete="off">
+                                <a href="add-event.html">
+                                    <button type="button" class="btn btn-primary d-block" data-bs-toggle="button"
+                                        autocomplete="off">
 
-                                    Add New Event
-                                </button>
+                                        Add New Event
+                                    </button>
+                                </a>
                             </li>
 
                             <!-- User -->
@@ -337,239 +338,355 @@
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
+                <!-- SELECT EVENT -->
+
+
                 <div class="content-wrapper">
                     <!-- Content -->
-
                     <div class="container-xxl flex-grow-1 container-p-y">
 
-                        <!-- Page Header -->
-                        <div class="card mb-4">
-                            <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div class="container-xxl flex-grow-1 container-p-y">
 
+                            <div class="d-flex justify-content-between align-items-center mb-4">
                                 <div>
-                                    <h4 class="mb-1">My Events</h4>
-                                    <p class="text-muted mb-0">Create, manage, and track all your events</p>
+                                    <h4 class="fw-bold mb-1">Voting Orders</h4>
+                                    <p class="text-muted mb-0">
+                                        Track vote purchases and revenue across your contests
+                                    </p>
                                 </div>
 
-                                <div class="d-flex flex-wrap gap-3 align-items-center">
-
-                                    <div class="px-4 py-3 rounded bg-label-primary text-center">
-                                        <small class="text-muted">Total Events</small>
-                                        <h4 class="mb-0">0</h4>
-                                    </div>
-
-                                    <div class="px-4 py-3 rounded bg-label-success text-center">
-                                        <small class="text-muted">Active</small>
-                                        <h4 class="mb-0">0</h4>
-                                    </div>
-
+                                <div class="d-flex gap-2">
                                     <button class="btn btn-outline-secondary">
-                                        <i class="bx bx-archive me-1"></i> Archived
+                                        <i class="bx bx-printer"></i> Print
                                     </button>
-
-                                    <a href="add-event.html" class="btn btn-primary">
-                                        <i class="bx bx-plus me-1"></i> Create Event
-                                    </a>
-
+                                    <button class="btn btn-success">
+                                        <i class="bx bx-download"></i> Export CSV
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header d-flex align-items-center">
-                                <span class="badge bg-label-primary p-2 rounded me-2">
-                                    <i class="bx bx-filter-alt"></i>
-                                </span>
-                                <h6 class="mb-0">Search & Filters</h6>
+                            <div class="row mb-4">
+
+                                <div class="col-md-2 col-sm-6 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <i class="bx bx-receipt mb-2 text-primary"></i>
+                                            <h6>Total Orders</h6>
+                                            <h4>128</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-6 mb-3">
+                                    <div class="card bg-primary text-white text-center">
+                                        <div class="card-body">
+                                            <i class="bx bx-money mb-2"></i>
+                                            <h6>Total Revenue</h6>
+                                            <h4>₦384,200</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-6 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <i class="bx bx-check-circle mb-2 text-success"></i>
+                                            <h6>Paid Orders</h6>
+                                            <h4>96</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-6 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <i class="bx bx-gift mb-2 text-info"></i>
+                                            <h6>Free Orders</h6>
+                                            <h4>32</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-6 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <i class="bx bx-bar-chart-alt-2 mb-2 text-warning"></i>
+                                            <h6>Total Votes</h6>
+                                            <h4>4,820</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
+                            <div class="row mb-4">
 
-                            <div class="card-body">
-                                <div class="row g-3 align-items-end">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card">
+                                        <h6 class="card-header">Revenue Trend</h6>
+                                        <div class="card-body">
+                                            <canvas id="revenueChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <div class="col-lg-4">
-                                        <label class="form-label">Search</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text"><i class="bx bx-search"></i></span>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card">
+                                        <h6 class="card-header">Vote Type Breakdown</h6>
+                                        <div class="card-body">
+                                            <canvas id="voteTypeChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row mb-4">
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card">
+                                        <h6 class="card-header">
+                                            <i class="bx bx-trophy me-1"></i> Top Contests
+                                        </h6>
+                                        <div class="card-body text-center text-muted">
+                                            <i class="bx bx-calendar-x" style="font-size:50px;"></i>
+                                            <p class="mt-2">No contest data available</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card">
+                                        <h6 class="card-header">
+                                            <i class="bx bx-star me-1"></i> Top Nominees
+                                        </h6>
+                                        <div class="card-body text-center text-muted">
+                                            <i class="bx bx-user-x" style="font-size:50px;"></i>
+                                            <p class="mt-2">No nominee data available</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card mb-4">
+                                <h6 class="card-header">Search & Filters</h6>
+
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
                                             <input type="text" class="form-control"
-                                                placeholder="Search by title, venue, or description">
+                                                placeholder="Search reference, email, voter name">
                                         </div>
-                                    </div>
 
-                                    <div class="col-lg-2">
-                                        <label class="form-label">Category</label>
-                                        <select class="form-select">
-                                            <option>All Categories</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-lg-2">
-                                        <label class="form-label">Status</label>
-                                        <select class="form-select">
-                                            <option>All Status</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-lg-2">
-                                        <label class="form-label">Time Period</label>
-                                        <select class="form-select">
-                                            <option>All Events</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-lg-2 d-flex gap-2">
-                                        <button class="btn btn-primary w-100">
-                                            <i class="bx bx-search-alt me-1"></i> Apply
-                                        </button>
-                                        <button class="btn btn-light w-100">
-                                            <i class="bx bx-reset"></i>Reset
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                                <div class="text-end mt-3">
-                                    <button class="btn btn-label-primary">
-                                        <i class="bx bx-printer me-1"></i> Print
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card text-center py-5">
-                            <div class="card-body">
-
-                                <div class="mb-4">
-                                    <span
-                                        class="rounded-circle bg-label-primary d-inline-flex align-items-center justify-content-center"
-                                        style="width:90px;height:90px;">
-                                        <i class="bx bx-calendar-x fs-1"></i>
-                                    </span>
-                                </div>
-
-                                <h4 class="mb-2">No Events Yet</h4>
-                                <p class="text-muted mb-4">
-                                    You haven't created any events yet. Start by creating your first event to get
-                                    attendees excited!
-                                </p>
-
-                                <a href="add-event.html" class="btn btn-primary btn-lg">
-                                    <i class="bx bx-plus me-1"></i> Create Your First Event
-                                </a>
-
-                            </div>
-                        </div>
-                        <div class="row g-4">
-
-                            <!-- Event Card incase there is an event. remove only then --
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card h-100">
-
-                                    <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="Event">
-
-                                    <div class="card-body">
-                                        <span class="badge bg-success mb-2">Active</span>
-
-                                        <h5 class="card-title mb-1">Tech Conference 2025</h5>
-                                        <p class="text-muted small mb-2">
-                                            <i class="bx bx-map me-1"></i> Owerri, Nigeria
-                                        </p>
-
-                                        <p class="small mb-3">
-                                            <i class="bx bx-calendar me-1"></i> Aug 20, 2025 · 10:00 AM
-                                        </p>
-
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <span class="fw-semibold text-primary">Free</span>
-
-                                            <div class="dropdown">
-                                                <button class="btn btn-sm btn-light" data-bs-toggle="dropdown">
-                                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li><a class="dropdown-item" href="#">View</a></li>
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
+                                        <div class="col-md-3 mb-3">
+                                            <select class="form-select">
+                                                <option>All Contests</option>
+                                                <option>Miss Campus 2025</option>
+                                            </select>
                                         </div>
-                                    </div>
 
+                                        <div class="col-md-3 mb-3">
+                                            <select class="form-select">
+                                                <option>All Payment Types</option>
+                                                <option>Paid</option>
+                                                <option>Free</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-2 mb-3">
+                                            <button class="btn btn-primary w-100">
+                                                <i class="bx bx-search"></i> Apply
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <h6 class="card-header">Vote Orders</h6>
+
+                                <div class="table-responsive text-nowrap">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Reference</th>
+                                                <th>Contest</th>
+                                                <th>Nominee</th>
+                                                <th>Votes</th>
+                                                <th>Amount</th>
+                                                <th>Type</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#ST-VO-09231</td>
+                                                <td>Miss Campus 2025</td>
+                                                <td>Jane Okorie</td>
+                                                <td>50</td>
+                                                <td>₦10,000</td>
+                                                <td><span class="badge bg-success">Paid</span></td>
+                                                <td>24 Dec 2025</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>#ST-VO-09232</td>
+                                                <td>Miss Campus 2025</td>
+                                                <td>Ada Obi</td>
+                                                <td>1</td>
+                                                <td>₦0</td>
+                                                <td><span class="badge bg-info">Free</span></td>
+                                                <td>24 Dec 2025</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>#ST-VO-09233</td>
+                                                <td>Best Artist Awards</td>
+                                                <td>DJ Xclusive</td>
+                                                <td>120</td>
+                                                <td>₦24,000</td>
+                                                <td><span class="badge bg-success">Paid</span></td>
+                                                <td>25 Dec 2025</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>#ST-VO-09234</td>
+                                                <td>Best Artist Awards</td>
+                                                <td>MC Blaze</td>
+                                                <td>10</td>
+                                                <td>₦2,000</td>
+                                                <td><span class="badge bg-success">Paid</span></td>
+                                                <td>25 Dec 2025</td>
+                                            </tr>
+                                        </tbody>
+
+
+                                        <tbody>
+                                            <!-- Empty State -->
+                                            <tr>
+                                                <td colspan="7" class="text-center py-5">
+                                                    <i class="bx bx-cart-alt mb-3"
+                                                        style="font-size:60px;color:#d1d5db;"></i>
+                                                    <h6>No Orders Found</h6>
+                                                    <p class="text-muted">
+                                                        Vote orders will appear once voters complete purchases.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
 
                         </div>
+
+
+
+                        <!-- / Content -->
+
+                        <!-- Footer -->
+                        <footer class="content-footer footer bg-footer-theme">
+                            <!-- ... footer content ... -->
+                        </footer>
+                        <!-- / Footer -->
+
+                        <div class="content-backdrop fade"></div>
                     </div>
-
-
-
-
-
-                    <!-- / Content -->
-
-                    <!-- Footer -->
-                    <footer class="content-footer footer bg-footer-theme">
-                        <div
-                            class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                            <div class="mb-2 mb-md-0">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                , made by
-                                <a href="https://themeselection.com" target="_blank"
-                                    class="footer-link fw-bolder">Morich Digital</a>
-                            </div>
-
-                        </div>
-                    </footer>
-                    <!-- / Footer -->
-
-                    <div class="content-backdrop fade"></div>
+                    <!-- Content wrapper -->
                 </div>
-                <!-- Content wrapper -->
+                <!-- / Layout page -->
             </div>
-            <!-- / Layout page -->
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
         </div>
+        <!-- / Layout wrapper -->
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-        <a href="#" target="_blank" class="btn btn-danger btn-buy-now">Contact us</a>
-    </div>
-    <script>
-        document.getElementById('eventImage').addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (!file) return;
 
-            const img = document.getElementById('previewImage');
-            img.src = URL.createObjectURL(file);
-            img.classList.remove('d-none');
-        });
+        <!-- Core JS -->
+        <script src="assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="assets/vendor/libs/popper/popper.js"></script>
+        <script src="assets/vendor/js/bootstrap.js"></script>
+        <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="assets/vendor/js/menu.js"></script>
 
-    </script>
+        <!-- Vendors JS -->
+        <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="assets/vendor/libs/popper/popper.js"></script>
-    <script src="assets/vendor/js/bootstrap.js"></script>
-    <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <!-- QR Code Scanner Library -->
+        <script src="https://unpkg.com/html5-qrcode@2.3.4/html5-qrcode.min.js"></script>
 
-    <script src="assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
 
-    <!-- Vendors JS -->
-    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+        <!-- Page JS -->
+        <script src="assets/js/dashboards-analytics.js"></script>
 
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+        <!-- QR Scanner Script -->
 
-    <!-- Page JS -->
-    <script src="assets/js/dashboards-analytics.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script>
+            const revenueCtx = document.getElementById('revenueChart');
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+            new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Revenue (₦)',
+                        data: [25000, 42000, 31000, 60000, 78000, 92000, 56000],
+                        borderWidth: 2,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: value => '₦' + value.toLocaleString()
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        <script>
+            const voteTypeCtx = document.getElementById('voteTypeChart');
+
+            new Chart(voteTypeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Paid Votes', 'Free Votes'],
+                    datasets: [{
+                        data: [96, 32],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            const hasOrders = true;
+
+if (!hasOrders) {
+  // show empty state
+} else {
+  // render table
+}
+
+        </script>
+
+
+
+
 </body>
 
 </html>
