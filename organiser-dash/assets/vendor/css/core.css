@@ -5,7 +5,7 @@
   --bs-purple: #696cff;
   --bs-pink: #e83e8c;
   --bs-red: #ff3e1d;
-  --bs-orange: #fd7e14;
+  --bs-orange: #D92200;
   --bs-yellow: #ffab00;
   --bs-green: #71dd37;
   --bs-teal: #20c997;
@@ -14717,8 +14717,8 @@ body {
   bottom: 3rem;
   right: 1.625rem;
   z-index: 999999;
-  box-shadow: 0 1px 20px 1px #fd910d;
-  background-color: #fd7e14;
+  box-shadow: 0 1px 20px 1px #D92200;
+  background-color: #D92200;
 }
 .buy-now .btn-buy-now:hover {
   box-shadow: none;
