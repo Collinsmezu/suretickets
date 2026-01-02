@@ -1,15 +1,4 @@
-/**
-* Template Name: iLanding
-* Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-* Updated: Nov 12 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -22,7 +11,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #fd910d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #D92200; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -30,11 +19,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #fd910d; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #D92200; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #fd910d; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #D92200; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -45,7 +34,7 @@
 }
 
 .dark-background {
-  --background-color: #fd910d;
+  --background-color: #D92200;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #f99345;
@@ -87,14 +76,14 @@ h6 {
   font-family: var(--heading-font);
 }
 .btn-outline-warning {
-  border-color: #fd910d;
-  color: #fd910d;
+  border-color: #D92200;
+  color: #D92200;
 }
 
 .btn-outline-warning:hover {
-  background-color: #fd910d;
+  background-color: #D92200;
   color: #fff;               
-  border-color: #fd910d;     
+  border-color: #D92200;     
 }
 
 /* PHP Email Form Messages
@@ -482,7 +471,7 @@ h6 {
     font-weight:800;
 }
 .events-section h2 span{
-    color:#fd910d;
+    color:#D92200;
 }
 .events-section p{
     margin-top:10px;
@@ -515,7 +504,7 @@ h6 {
 }
 .event-tags button:hover,
 .event-tags button.active{
-    background:#fd910d;
+    background:#D92200;
     color:#fff;
 }
 
@@ -577,7 +566,7 @@ h6 {
 }
 .event-date i{
     font-size:16px;
-    color:#fd910d;
+    color:#D92200;
 }
 
 /* Title */
@@ -616,7 +605,7 @@ h6 {
 .event-price{
     font-size:19px;
     font-weight:800;
-    color:#fd910d;
+    color:#D92200;
 }
 
 .event-price span{
@@ -628,7 +617,7 @@ h6 {
 
 /* CTA BUTTON */
 .event-btn{
-    background:#fd910d;
+    background:#D92200;
     color:#fff;
     border:none;
     padding:11px 22px;
@@ -660,7 +649,7 @@ h6 {
     position:absolute;
     top:40%;
     transform:translateY(-50%);
-    background:#fd910d;
+    background:#D92200;
     border:none;
     width:38px;
     height:38px;
