@@ -1,7 +1,7 @@
 /*
 |--------------------------------------------------------------------------
 | SureTickets – Custom Theme Overrides
-| Primary Color: #fd910d (Orange)
+| Primary Color: #D92200 (Orange)
 |--------------------------------------------------------------------------
 | This file overrides Sneat + Bootstrap defaults safely
 */
@@ -12,10 +12,10 @@
 
 :root,
 :root[data-theme="theme-default"] {
-  --bs-primary: #fd910d;
+  --bs-primary: #D92200;
   --bs-primary-rgb: 253, 145, 13;
 
-  --template-primary: #fd910d;
+  --template-primary: #D92200;
   --template-primary-rgb: 253, 145, 13;
 }
 
@@ -32,11 +32,11 @@ body {
    ========================= */
 
 .text-primary {
-  color: #fd910d !important;
+  color: #D92200 !important;
 }
 
 a {
-  color: #fd910d;
+  color: #D92200;
   text-decoration: none;
 }
 
@@ -54,8 +54,8 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: #fd910d !important;
-  border-color: #fd910d !important;
+  background-color: #D92200 !important;
+  border-color: #D92200 !important;
   color: #ffffff !important;
 }
 
@@ -66,12 +66,12 @@ a:hover {
 }
 
 .btn-outline-primary {
-  color: #fd910d !important;
-  border-color: #fd910d !important;
+  color: #D92200 !important;
+  border-color: #D92200 !important;
 }
 
 .btn-outline-primary:hover {
-  background-color: #fd910d !important;
+  background-color: #D92200 !important;
   color: #ffffff !important;
 }
 
@@ -80,16 +80,16 @@ a:hover {
    ========================= */
 
 .bg-primary {
-  background-color: #fd910d !important;
+  background-color: #D92200 !important;
 }
 
 .badge.bg-primary {
-  background-color: #fd910d !important;
+  background-color: #D92200 !important;
 }
 
 .bg-label-primary {
   background-color: rgba(253, 145, 13, 0.18) !important;
-  color: #fd910d !important;
+  color: #D92200 !important;
 }
 
 /* =========================
@@ -98,7 +98,7 @@ a:hover {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  background-color: #fd910d !important;
+  background-color: #D92200 !important;
   color: #ffffff !important;
 }
 
@@ -114,12 +114,12 @@ a:hover {
 .menu-item.active > .menu-link,
 .menu-item.open > .menu-link {
   background-color: rgba(253, 145, 13, 0.18) !important;
-  color: #fd910d !important;
+  color: #D92200 !important;
 }
 
 .menu-item.active .menu-icon,
 .menu-item.open .menu-icon {
-  color: #fd910d !important;
+  color: #D92200 !important;
 }
 
 /* =========================
@@ -129,7 +129,7 @@ a:hover {
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: rgba(253, 145, 13, 0.18) !important;
-  color: #fd910d !important;
+  color: #D92200 !important;
 }
 
 /* =========================
@@ -138,7 +138,7 @@ a:hover {
 
 .form-control:focus,
 .form-select:focus {
-  border-color: #fd910d !important;
+  border-color: #D92200 !important;
   box-shadow: 0 0 0 0.15rem rgba(253, 145, 13, 0.35) !important;
 }
 
@@ -147,7 +147,7 @@ a:hover {
    ========================= */
 
 .progress-bar {
-  background-color: #fd910d !important;
+  background-color: #D92200 !important;
 }
 
 /* =========================
@@ -205,3 +205,131 @@ a:hover {
   background-color: rgba(255, 159, 67, 0.08); /* Sneat warning tint */
   border-color: #ff9f43;
 }
+/* Header */
+.profile-header {
+  background-color: #D92200;
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+ 
+}
+
+.profile-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon i {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* Locked field */
+.locked-field {
+  background: #f8f9fa;
+  border: 1px dashed #d0d7de;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.locked-field:hover {
+  background: #eef4ff;
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+/* Card polish */
+.profile-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.section-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #eef0f4;
+  display: flex;
+  align-items: center;
+}
+
+.section-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.security-card {
+  border-radius: 0.75rem;
+}
+.delete-card {
+  border-radius: 0.75rem;
+  border: 1px solid #f5c2c7;
+}
+
+.delete-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f5c2c7;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: var(--bs-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(13, 110, 253, 0.1);
+  color: var(--bs-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.qr-box {
+  border: 2px dashed var(--bs-primary);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(13, 110, 253, 0.05);
+}
+
+.qr-box i {
+  font-size: 3rem;
+  color: var(--bs-primary);
+}
+
+.qr-box p {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.qr-camera-box {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 12px;
+  border: 2px dashed var(--bs-primary);
+  background: rgba(13, 110, 253, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
