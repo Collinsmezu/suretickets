@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Profile</title>
+    <title>Revenue</title>
 
     <meta name="description" content="" />
 
@@ -52,15 +52,15 @@
 
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
-  <a href="index.html" class="app-brand-link">
-    <h1>SureTickets</h1>
-  </a>
+                    <a href="index.html" class="app-brand-link">
+                        <h1>SureTickets</h1>
+                    </a>
 
-  <a href="javascript:void(0);"
-     class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-    <i class="bx bx-chevron-left bx-sm align-middle"></i>
-  </a>
-</div>
+                    <a href="javascript:void(0);"
+                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
 
 
                 <div class="menu-inner-shadow"></div>
@@ -92,7 +92,7 @@
                                     <div>My Events</div>
                                 </a>
                             </li>
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="add-event.html" class="menu-link">
                                     <i class="bx bx-plus-circle me-2"></i>
                                     <div>Add New Event</div>
@@ -125,19 +125,19 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="send-invite.html" class="menu-link">
+                                <a href="#" class="menu-link">
                                     <i class="bx bx-send me-2"></i>
                                     <div>Send Invite</div>
                                 </a>
                             </li>
-                            
+
                             <li class="menu-item">
-                                <a href="message-history.html" class="menu-link">
+                                <a href="#" class="menu-link">
                                     <i class="bx bx-history me-2"></i>
                                     <div>History</div>
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </li>
 
@@ -171,7 +171,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="voting-orders.html" class="menu-link">
+                                <a href="#" class="menu-link">
                                     <i class="bx bx-cart me-2"></i>
                                     <div>Orders</div>
                                 </a>
@@ -185,7 +185,7 @@
                     </li>
 
                     <!-- EMAIL -->
-                    <li class="menu-item">
+                    <li class="menu-item  ">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-mail-send"></i>
                             <div>Email</div>
@@ -223,7 +223,7 @@
                     </li>
 
                     <!-- REVENUE -->
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="revenue.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-wallet"></i>
                             <div>Revenue</div>
@@ -261,12 +261,10 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <li class="nav-item lh-1 me-3">
-                                <a href="add-event.html">
                                 <button type="button" class="btn btn-primary d-block" data-bs-toggle="button"
                                     autocomplete="off">
                                     Add New Event
                                 </button>
-                                </a>
                             </li>
 
                             <!-- User -->
@@ -338,145 +336,140 @@
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
-                <div class="content-wrapper" style="margin-top: 3%;">
+                <div class="content-wrapper">
                     <!-- Content -->
+                    <div class="content-wrapper">
+                        <div class="container-xxl flex-grow-1 container-p-y">
 
-                    <div class="card profile-card mb-4">
-                        <div class="profile-header d-flex align-items-center gap-3">
-                            <div class="profile-icon">
-                                <i class="bx bx-user"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-0 text-white">Profile Information</h5>
-                                <small class="text-white-50">Your account details</small>
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="alert alert-primary d-flex align-items-center gap-2 mb-4">
-                                <i class="bx bx-info-circle fs-5"></i>
-                                <span>
-                                    Profile details are managed by support. Click any field to learn more.
-                                </span>
+                            <!-- Page Header -->
+                            <div class="mb-4">
+                                <h4 class="fw-bold mb-1">Revenue</h4>
+                                <p class="text-muted mb-0">
+                                    Track earnings from ticket sales, voting, and platform fees
+                                </p>
                             </div>
 
-                            <div class="row g-3">
-                                <!-- Full Name -->
-                                <div class="col-md-6">
-                                    <label class="form-label">Full Name</label>
-                                    <div class="locked-field" data-bs-toggle="tooltip"
-                                        title="Contact support to update this field">
-                                        Ugochukwu Mezu
+                            <!-- Revenue Summary Cards -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="card revenue-card">
+                                        <div class="card-body">
+                                            <small class="text-muted">Total Revenue</small>
+                                            <h3 class="fw-bold mt-2">₦1,245,000</h3>
+                                            <span class="badge bg-success mt-2">+12.5%</span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!-- Email -->
-                                <div class="col-md-6">
-                                    <label class="form-label">Email Address</label>
-                                    <div class="locked-field" data-bs-toggle="tooltip" title="Email cannot be edited">
-                                        ugochukwumezu@gmail.com
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="card revenue-card">
+                                        <div class="card-body">
+                                            <small class="text-muted">Ticket Sales</small>
+                                            <h3 class="fw-bold mt-2">₦820,000</h3>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!-- Username -->
-                                <div class="col-md-6">
-                                    <label class="form-label">Username</label>
-                                    <div class="locked-field" data-bs-toggle="tooltip"
-                                        title="Contact support to update this field">
-                                        Collins_m
-                                    </div>
-                                </div>
-
-                                <!-- Phone -->
-                                <div class="col-md-6">
-                                    <label class="form-label">Phone Number</label>
-                                    <div class="locked-field" data-bs-toggle="tooltip"
-                                        title="Contact support to update this field">
-                                        08133996317
-                                    </div>
-                                </div>
-
-                                <!-- Organization -->
-                                <div class="col-md-12">
-                                    <label class="form-label">Company / Organization</label>
-                                    <div class="locked-field" data-bs-toggle="tooltip"
-                                        title="Contact support to update this field">
-                                        Morich
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="card revenue-card">
+                                        <div class="card-body">
+                                            <small class="text-muted">Voting Revenue</small>
+                                            <h3 class="fw-bold mt-2">₦425,000</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="text-end mt-4">
-                                <button class="btn btn-primary">
-                                    <i class="bx bx-support me-1"></i> Contact Support
-                                </button>
+                            <!-- Revenue Trend -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold">Revenue Trend</h6>
+                                        <select class="form-select w-auto">
+                                            <option>Last 7 days</option>
+                                            <option>Last 30 days</option>
+                                            <option>This year</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Chart Placeholder -->
+                                    <div class="revenue-chart-placeholder">
+                                        Revenue chart goes here
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- Revenue Table -->
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <!-- Table Header -->
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="fw-semibold mb-0">Revenue Records</h6>
+                                        <input type="text" class="form-control w-25" placeholder="Search revenue...">
+                                    </div>
+
+                                    <!-- Table -->
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Source</th>
+                                                    <th>Event / Contest</th>
+                                                    <th>Amount</th>
+                                                    <th>Status</th>
+                                                    <th>Reference</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>12 Sep 2026</td>
+                                                    <td>Ticket</td>
+                                                    <td>Summer Concert</td>
+                                                    <td class="fw-semibold text-success">₦120,000</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>#REV-23901</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10 Sep 2026</td>
+                                                    <td>Voting</td>
+                                                    <td>Talent Show</td>
+                                                    <td class="fw-semibold text-success">₦45,000</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>#REV-23877</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>08 Sep 2026</td>
+                                                    <td>Ticket</td>
+                                                    <td>Comedy Night</td>
+                                                    <td class="fw-semibold text-success">₦210,000</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                    <td>#REV-23821</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-end mt-3">
+                                        <nav>
+                                            <ul class="pagination pagination-sm mb-0">
+                                                <li class="page-item disabled"><a class="page-link">Prev</a></li>
+                                                <li class="page-item active"><a class="page-link">1</a></li>
+                                                <li class="page-item"><a class="page-link">2</a></li>
+                                                <li class="page-item"><a class="page-link">3</a></li>
+                                                <li class="page-item"><a class="page-link">...</a></li>
+                                                <li class="page-item"><a class="page-link">Next</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
-                    <div class="card security-card mb-4">
-                        <div class="section-header d-flex align-items-center gap-3">
-                            <div class="section-icon bg-primary">
-                                <i class="bx bx-lock"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-0">Security Settings</h5>
-                                <small class="text-muted">Update your account password</small>
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="row g-3">
-                                <div class="col-md-12">
-                                    <label class="form-label">Current Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter current password">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">New Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter new password">
-                                    <small class="text-muted">
-                                        Minimum 8 characters, include uppercase, lowercase & numbers
-                                    </small>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Confirm New Password</label>
-                                    <input type="password" class="form-control" placeholder="Confirm new password">
-                                </div>
-                            </div>
-
-                            <div class="text-end mt-4">
-                                <button class="btn btn-primary">
-                                    <i class="bx bx-refresh me-1"></i> Update Password
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card delete-card">
-                        <div class="delete-header d-flex align-items-center gap-3">
-                            <div class="section-icon bg-danger">
-                                <i class="bx bx-trash"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-0 text-danger">Delete Account</h5>
-                                <small class="text-muted">Permanent and irreversible action</small>
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="alert alert-light border border-danger-subtle">
-                                <strong>Warning:</strong>
-                                Once you delete your account, all your events, ticket sales, and personal data
-                                will be permanently removed. This action cannot be undone.
-                            </div>
-
-                            <button class="btn btn-outline-danger">
-                                <i class="bx bx-trash me-1"></i> Delete Account Forever
-                            </button>
-                        </div>
-                    </div>
-
 
                     <!-- / Content -->
 
@@ -513,17 +506,6 @@
     <div class="buy-now">
         <a href="#" target="_blank" class="btn btn-danger btn-buy-now">Contact us</a>
     </div>
-    <script>
-        document.getElementById('eventImage').addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            const img = document.getElementById('previewImage');
-            img.src = URL.createObjectURL(file);
-            img.classList.remove('d-none');
-        });
-
-    </script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

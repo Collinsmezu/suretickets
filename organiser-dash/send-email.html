@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Voting Orders</title>
+    <title>Send Email.</title>
 
     <meta name="description" content="" />
 
@@ -147,7 +147,7 @@
                         <span class="menu-header-text">Voting</span>
                     </li>
 
-                    <li class="menu-item active">
+                    <li class="menu-item ">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-trophy"></i>
                             <div>Voting</div>
@@ -171,7 +171,7 @@
                                     <div>Results</div>
                                 </a>
                             </li>
-                            <li class="menu-item active">
+                            <li class="menu-item ">
                                 <a href="voting-orders.html" class="menu-link">
                                     <i class="bx bx-cart me-2"></i>
                                     <div>Orders</div>
@@ -217,7 +217,7 @@
 
                     <!-- TRANSACTIONS -->
                     <li class="menu-item">
-                        <a href="" class="menu-link">
+                        <a href="transaction-history.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-transfer-alt"></i>
                             <div>Transactions</div>
                         </a>
@@ -344,252 +344,167 @@
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="fw-bold mb-1">Send Email to Participants</h4>
+                        <p class="text-muted mb-4">
+                            Send bulk emails to ticket buyers or voters with rich text formatting
+                        </p>
 
-                        <div class="container-xxl flex-grow-1 container-p-y">
-
-                            <div class="d-flex justify-content-between align-items-center mb-4">
-                                <div>
-                                    <h4 class="fw-bold mb-1">Voting Orders</h4>
-                                    <p class="text-muted mb-0">
-                                        Track vote purchases and revenue across your contests
-                                    </p>
-                                </div>
-
-                                <div class="d-flex gap-2">
-                                    <button class="btn btn-outline-secondary">
-                                        <i class="bx bx-printer"></i> Print
-                                    </button>
-                                    <button class="btn btn-success">
-                                        <i class="bx bx-download"></i> Export CSV
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-
-                                <div class="col-md-2 col-sm-6 mb-3">
-                                    <div class="card text-center">
-                                        <div class="card-body">
-                                            <i class="bx bx-receipt mb-2 text-primary"></i>
-                                            <h6>Total Orders</h6>
-                                            <h4>128</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 col-sm-6 mb-3">
-                                    <div class="card bg-primary text-white text-center">
-                                        <div class="card-body">
-                                            <i class="bx bx-money mb-2"></i>
-                                            <h6>Total Revenue</h6>
-                                            <h4>₦384,200</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 col-sm-6 mb-3">
-                                    <div class="card text-center">
-                                        <div class="card-body">
-                                            <i class="bx bx-check-circle mb-2 text-success"></i>
-                                            <h6>Paid Orders</h6>
-                                            <h4>96</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 col-sm-6 mb-3">
-                                    <div class="card text-center">
-                                        <div class="card-body">
-                                            <i class="bx bx-gift mb-2 text-info"></i>
-                                            <h6>Free Orders</h6>
-                                            <h4>32</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 col-sm-6 mb-3">
-                                    <div class="card text-center">
-                                        <div class="card-body">
-                                            <i class="bx bx-bar-chart-alt-2 mb-2 text-warning"></i>
-                                            <h6>Total Votes</h6>
-                                            <h4>4,820</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row mb-4">
-
-                                <div class="col-md-6 mb-3">
-                                    <div class="card">
-                                        <h6 class="card-header">Revenue Trend</h6>
-                                        <div class="card-body">
-                                            <canvas id="revenueChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-3">
-                                    <div class="card">
-                                        <h6 class="card-header">Vote Type Breakdown</h6>
-                                        <div class="card-body">
-                                            <canvas id="voteTypeChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row mb-4">
-
-                                <div class="col-md-6 mb-3">
-                                    <div class="card">
-                                        <h6 class="card-header">
-                                            <i class="bx bx-trophy me-1"></i> Top Contests
-                                        </h6>
-                                        <div class="card-body text-center text-muted">
-                                            <i class="bx bx-calendar-x" style="font-size:50px;"></i>
-                                            <p class="mt-2">No contest data available</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 mb-3">
-                                    <div class="card">
-                                        <h6 class="card-header">
-                                            <i class="bx bx-star me-1"></i> Top Nominees
-                                        </h6>
-                                        <div class="card-body text-center text-muted">
-                                            <i class="bx bx-user-x" style="font-size:50px;"></i>
-                                            <p class="mt-2">No nominee data available</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="card mb-4">
-                                <h6 class="card-header">Search & Filters</h6>
-
-                                <div class="card-body">
-                                    <div class="row">
-
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control"
-                                                placeholder="Search reference, email, voter name">
-                                        </div>
-
-                                        <div class="col-md-3 mb-3">
-                                            <select class="form-select">
-                                                <option>All Contests</option>
-                                                <option>Miss Campus 2025</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-3 mb-3">
-                                            <select class="form-select">
-                                                <option>All Payment Types</option>
-                                                <option>Paid</option>
-                                                <option>Free</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-2 mb-3">
-                                            <button class="btn btn-primary w-100">
-                                                <i class="bx bx-search"></i> Apply
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <h6 class="card-header">Vote Orders</h6>
-
-                                <div class="table-responsive text-nowrap">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Reference</th>
-                                                <th>Contest</th>
-                                                <th>Nominee</th>
-                                                <th>Votes</th>
-                                                <th>Amount</th>
-                                                <th>Type</th>
-                                                <th>Date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>#ST-VO-09231</td>
-                                                <td>Miss Campus 2025</td>
-                                                <td>Jane Okorie</td>
-                                                <td>50</td>
-                                                <td>₦10,000</td>
-                                                <td><span class="badge bg-success">Paid</span></td>
-                                                <td>24 Dec 2025</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>#ST-VO-09232</td>
-                                                <td>Miss Campus 2025</td>
-                                                <td>Ada Obi</td>
-                                                <td>1</td>
-                                                <td>₦0</td>
-                                                <td><span class="badge bg-info">Free</span></td>
-                                                <td>24 Dec 2025</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>#ST-VO-09233</td>
-                                                <td>Best Artist Awards</td>
-                                                <td>DJ Xclusive</td>
-                                                <td>120</td>
-                                                <td>₦24,000</td>
-                                                <td><span class="badge bg-success">Paid</span></td>
-                                                <td>25 Dec 2025</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>#ST-VO-09234</td>
-                                                <td>Best Artist Awards</td>
-                                                <td>MC Blaze</td>
-                                                <td>10</td>
-                                                <td>₦2,000</td>
-                                                <td><span class="badge bg-success">Paid</span></td>
-                                                <td>25 Dec 2025</td>
-                                            </tr>
-                                        </tbody>
-
-
-                                        <tbody>
-                                            <!-- Empty State -->
-                                            <tr>
-                                                <td colspan="7" class="text-center py-5">
-                                                    <i class="bx bx-cart-alt mb-3"
-                                                        style="font-size:60px;color:#d1d5db;"></i>
-                                                    <h6>No Orders Found</h6>
-                                                    <p class="text-muted">
-                                                        Vote orders will appear once voters complete purchases.
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <div class="row g-4">
+                            <!-- Compose Email -->
+                            <div class="col-lg-8">
+                                <!-- compose card -->
                             </div>
 
+                            <!-- Right Sidebar -->
+                            <div class="col-lg-4">
+                                <!-- history + tips -->
+                            </div>
                         </div>
-
-
-
-                        <!-- / Content -->
-
-                        <!-- Footer -->
-                        <footer class="content-footer footer bg-footer-theme">
-                            <!-- ... footer content ... -->
-                        </footer>
-                        <!-- / Footer -->
-
-                        <div class="content-backdrop fade"></div>
                     </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">Compose Email</h5>
+
+                            <!-- Select Source -->
+                            <label class="form-label">Select Source</label>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <button type="button" class="btn w-100 source-btn  btn-primary active "
+                                        data-source="event" id="sourceEvent">
+                                        Event
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn w-100 source-btn  btn-primary" data-source="voting"
+                                        id="sourceVoting">
+                                        Voting Contest
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- Select Event / Contest -->
+                            <div class="mb-3">
+                                <label class="form-label" id="sourceLabel">Select Event</label>
+                                <select class="form-select" id="sourceSelect">
+                                    <option value="">Choose an event...</option>
+                                    <option value="event1">Summer Concert</option>
+                                    <option value="event2">Tech Conference</option>
+                                </select>
+                            </div>
+
+                            <!-- Send To -->
+                            <label class="form-label">Send To</label>
+
+                            <div class="border rounded p-2 mb-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="audience" value="all" checked>
+                                    <label class="form-check-label">
+                                        All Ticket Buyers (Free + Paid)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="border rounded p-2 mb-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="audience" value="paid">
+                                    <label class="form-check-label">
+                                        Paid Ticket Buyers Only
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="border rounded p-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="audience" value="free">
+                                    <label class="form-check-label">
+                                        Free Ticket Holders Only
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-light w-100 mb-3" id="previewRecipients">
+                                👁 Preview Recipients
+                            </button>
+
+                            <!-- Batch Size -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Batch Size <span class="text-muted">(Emails per batch)</span>
+                                </label>
+                                <select class="form-select" id="batchSize">
+                                    <option value="10">10 emails per batch </option>
+                                    <option value="25">25 emails per batch (Recommended)</option>
+                                    <option value="50">50 emails per batch</option>
+                                    <option value="100">100 emails per batch</option>
+                                </select>
+                                <small class="text-muted">2-second delay between batches</small>
+                            </div>
+
+                            <!-- Subject -->
+                            <div class="mb-3">
+                                <label class="form-label">Email Subject</label>
+                                <input type="text" class="form-control" placeholder="Enter email subject..."
+                                    id="emailSubject">
+                            </div>
+
+                            <!-- Message -->
+                            <label class="form-label">Message</label>
+
+                            <!-- Toolbar -->
+                            <div id="editor-toolbar">
+                                <select class="ql-header">
+                                    <option selected></option>
+                                    <option value="1"></option>
+                                    <option value="2"></option>
+                                </select>
+                                <button class="ql-bold"></button>
+                                <button class="ql-italic"></button>
+                                <button class="ql-underline"></button>
+                                <button class="ql-link"></button>
+                                <button class="ql-image"></button>
+                                <button class="ql-list" value="ordered"></button>
+                                <button class="ql-list" value="bullet"></button>
+                            </div>
+
+                            <div id="emailEditor" style="height: 260px;"></div>
+
+                            <div class="mt-3">
+                                <button class="btn btn-primary w-100" id="sendEmailBtn">
+                                    ✈ Send Email
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6>Email History</h6>
+
+                            <div class="border-start border-3 ps-3 mb-3">
+                                <strong>yekeenoluwaseun004@gmail.com</strong><br>
+                                <small class="text-muted">1 recipient · 1 month ago</small>
+                            </div>
+
+                            <div class="border-start border-3 ps-3">
+                                <strong>hgdfscgvhbjgvcf</strong><br>
+                                <small class="text-muted">4 recipients · 1 month ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h6>💡 Email Tips</h6>
+                            <ul class="mb-0">
+                                <li>Keep subjects under 50 characters</li>
+                                <li>Personalize your message</li>
+                                <li>Preview before sending</li>
+                                <li>Use batch sending for large lists</li>
+                                <li>Images upload via editor toolbar</li>
+                                <li>Filter by free or paid recipients</li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <!-- Content wrapper -->
                 </div>
                 <!-- / Layout page -->
@@ -621,68 +536,56 @@
         <!-- Page JS -->
         <script src="assets/js/dashboards-analytics.js"></script>
 
-        <!-- QR Scanner Script -->
+        <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+        <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
 
-        <!-- Place this tag in your head or just before your close body tag. -->
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
         <script>
-            const revenueCtx = document.getElementById('revenueChart');
-
-            new Chart(revenueCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    datasets: [{
-                        label: 'Revenue (₦)',
-                        data: [25000, 42000, 31000, 60000, 78000, 92000, 56000],
-                        borderWidth: 2,
-                        tension: 0.4
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: {
-                            ticks: {
-                                callback: value => '₦' + value.toLocaleString()
-                            }
-                        }
-                    }
-                }
-            });
-        </script>
-        <script>
-            const voteTypeCtx = document.getElementById('voteTypeChart');
-
-            new Chart(voteTypeCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Paid Votes', 'Free Votes'],
-                    datasets: [{
-                        data: [96, 32],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
+            const quill = new Quill('#emailEditor', {
+                theme: 'snow',
+                modules: { toolbar: '#editor-toolbar' },
+                placeholder: 'Type your message here...'
             });
 
-            const hasOrders = true;
+            const sourceEvent = document.getElementById('sourceEvent');
+            const sourceVoting = document.getElementById('sourceVoting');
+            const sourceLabel = document.getElementById('sourceLabel');
+            const sourceSelect = document.getElementById('sourceSelect');
 
-if (!hasOrders) {
-  // show empty state
-} else {
-  // render table
-}
+            sourceEvent.onclick = () => {
+                sourceEvent.classList.add('active');
+                sourceVoting.classList.remove('active');
+                sourceLabel.textContent = 'Select Event';
+                sourceSelect.innerHTML = `
+      <option value="">Choose an event...</option>
+      <option>Summer Concert</option>
+      <option>Tech Conference</option>
+    `;
+            };
 
+            sourceVoting.onclick = () => {
+                sourceVoting.classList.add('active');
+                sourceEvent.classList.remove('active');
+                sourceLabel.textContent = 'Select Voting Contest';
+                sourceSelect.innerHTML = `
+      <option value="">Choose a contest...</option>
+      <option>Face of Campus</option>
+      <option>Best Startup Pitch</option>
+    `;
+            };
+
+            document.getElementById('sendEmailBtn').onclick = () => {
+                const subject = emailSubject.value.trim();
+                const message = quill.root.innerHTML;
+
+                if (!subject || message === '<p><br></p>') {
+                    alert('Subject and message are required');
+                    return;
+                }
+
+                alert('Email sent successfully');
+            };
         </script>
+
 
 
 
